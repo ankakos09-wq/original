@@ -5,10 +5,6 @@ import {crearmer, crearven, crearter, crearmars, crearjup, crearsat, crearura, c
 import {crearring} from "./ring.js";
 import {rotacio, translacio} from "./moviments.js"
 import { crearOrbita } from './orbita.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-import { AfterimagePass } from 'three/addons/postprocessing/AfterimagePass.js';
 
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
@@ -69,15 +65,6 @@ const nep= crearnep();
 scene.add(nep);
 const nepOrbita = crearOrbita(449.5, 0.0086, 0x9966cc);
 scene.add(nepOrbita);
-
-const renderPass = new RenderPass( scene, camera );
-const composer = new EffectComposer( renderer );
-composer.addPass( renderPass );
-const resolution = new THREE.Vector2( window.innerWidth, window.innerHeight );
-const bloomPass = new UnrealBloomPass( resolution, 1.5, 0.4, 0.85 );
-composer.addPass( bloomPass );
-const afterimagePass = new AfterimagePass( 0.9 );
-composer.addPass( afterimagePass );
 
 const pointLight = new THREE.PointLight(0xFC9601, 1000, 0)
 pointLight.position.set(0,0,0)
