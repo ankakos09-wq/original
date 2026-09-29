@@ -1,11 +1,11 @@
 import './style.css'
 import * as THREE from 'three';
 import {crearsol} from "./sol.js";
-import {crearmer, crearven, crearter, crearmars, crearjup, crearsat, crearura, crearnep} from "./planets.js";
+import {crearmer, crearven, crearter, crearmars, crearjup, crearsat, crearura, crearnep, crearplu} from "./planets.js";
 import {crearring} from "./ring.js";
 import {rotacio, translacio} from "./moviments.js"
 import { crearOrbita } from './orbita.js';
-
+import {translaciosenseT} from './moviment.sense.periode.js';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 
 const scene = new THREE.Scene();
@@ -66,6 +66,11 @@ scene.add(nep);
 const nepOrbita = crearOrbita(449.5, 0.0086, 0x9966cc);
 scene.add(nepOrbita);
 
+const plu= crearplu();
+scene.add(plu);
+const pluOrbita= crearOrbita(590.6 , 0.2488, 0xffd3ac);
+scene.add(pluOrbita);
+
 const pointLight = new THREE.PointLight(0xFC9601, 1000, 0)
 pointLight.position.set(0,0,0)
 
@@ -95,6 +100,7 @@ function animate()
     translacio(29.457, sat, 143.4, 0.0565, any);
     translacio(84.017, ura, 287.1, 0.0472, any);
     translacio(164.79, nep, 449.5, 0.0086, any);
+    translaciosenseT(plu, 590.6, 0.2488, any);
     rotacio(sol, 25.4, dia); 
     rotacio(mer, 58.6, dia);
     rotacio(ven, -243, dia);
@@ -104,6 +110,7 @@ function animate()
     rotacio(sat, 0.444, dia);
     rotacio(ura, -0.718, dia);
     rotacio(nep, 0.671, dia);
+    rotacio(plu, 6.39, dia);
     controls.update(); 
     renderer.render (scene, camera);}
 

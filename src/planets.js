@@ -7,6 +7,7 @@ import juptextura from './imatges/jupiter.jpg';
 import sattextura from './imatges/saturn.jpg';
 import uratextura from './imatges/uranus.jpg';
 import neptextura from './imatges/neptu.jpg';
+import plutextura from './imatges/pluto.jpg';
 
 export function crearplaneta(textura, mida ){
 const Texture= new THREE.TextureLoader().load(textura);
@@ -39,3 +40,6 @@ export function crearura() {
 
 export function crearnep() {
  return crearplaneta(neptextura,0.9);}
+
+export function crearplu() {
+ return crearplaneta(plutextura,0.25);}

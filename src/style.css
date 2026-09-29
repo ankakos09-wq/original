@@ -1,4 +1,21 @@
-canvas{ position:fixed; top:0; left:0;}
- .hidden {
-   display : none;
- }
+canvas{ position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Envia el fons darrere de tot */
+}
+
+/* Estils per al teu peu de pàgina */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-family: sans-serif;
+    color: #ffffff; /* Text blanc perquè es vegi bé sobre l'espai */
+    background: rgba(0, 0, 0, 0.5); /* Fons negre semi-transparent optional */
+    z-index: 10; /* Assegura que el text es quedi sempre al davant */
+}
